@@ -187,9 +187,32 @@
     // nestedLoops(['hello', 'goodbye']) // should return ['hEllO', 'gOOdbyE']
     // ❗ Notes:
     // 🧠 To capitalize a string you can use its toUpperCase method: "a".toUpperCase() returns "A"
-    function nestedLoops() {
+    function nestedLoops(arr) {
+      let result = [];
 
+      for (let i = 0; i < arr.length; i++) {
+        let currentString = arr[i];
+        let modifiedString = '';
+
+        for (let j = 0; j < currentString.length; j++) {
+          if (
+            currentString[j] === 'a' ||
+            currentString[j] === 'e' ||
+            currentString[j] === 'i' ||
+            currentString[j] === 'o' ||
+            currentString[j] === 'u'
+          ) {
+            modifiedString += currentString[j].toUpperCase();
+          } else {
+            modifiedString += currentString[j];
+
+          }
+        }
+        result.push(modifiedString);
+      }
+      return result;
     }
+    console.log(nestedLoops(['hello', 'goodbye']));
 
     // 👉 CHALLENGE 9
     // 🧠 The function crazyTrimmer takes an array as its argument.

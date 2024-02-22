@@ -32,6 +32,7 @@
     // 🧠 As you have done in the past, declare a variable before you start looping, to accumulate the result.
     function sumNumsFor(nums) {
       let sum = 0;
+
       for (let i = 0; i < nums.length; i++) {
         if (typeof nums[i] === 'number') {
           if (nums[i] === 13) {
@@ -52,6 +53,7 @@
     // 🧠 There are many ways to solve this, but practice using a for loop to iterate over the characters of the string.
     function stripVowels(str) {
       let newStr = [];
+
       for (i = 0; i < str.length; i++) {
         let char = str[i];
         if (char !== 'a' && char !== 'e' && char !== 'i' && char !== 'o' && char !== 'u') {
@@ -59,7 +61,7 @@
         }
       }
       return newStr.join('');
-      // return str.replace(/[aeiou]/g, ''); --> this would be a lot more accurate solution. I look forward to learn it.
+      // return str.replace(/[aeiou]/g, ''); --> this seems to be a lot more accurate solution. I look forward to learn it.
     }
 
     // 👉 CHALLENGE 3
@@ -79,7 +81,7 @@
             sum += nums[i];
           }
         }
-        i++
+        i++;
       }
       return sum;
     }
@@ -101,9 +103,19 @@
     // 🧠 There are many ways to solve this, but practice using a while loop.
     // 🧠 Work out using pen and paper how the round number and the lifePoints change after each round.
     // 🧠 As long as there are lifePoints, decrease lifePoints by round number, and increase round number by one.
-    function fightMonsters() {
+    function fightMonsters(lifePoints) {
+      let round = 1;
 
+      while (lifePoints > 0) {
+        lifePoints -= round;
+        if (lifePoints <= 0) {
+          return `You died in round ${round}`;
+        }
+        round++;
+      }
     }
+
+    // I totally overcomplicated this one.
 
     // 👉 CHALLENGE 5
     // 🧠 The function findEvenNums takes an array of integers as its argument.
